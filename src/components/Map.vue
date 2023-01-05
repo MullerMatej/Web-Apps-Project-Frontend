@@ -2,7 +2,7 @@
   <div>
     <div>
       <div>
-        <h1>Your coordinates:</h1>
+        <h1>Your coordinatess:</h1>
         <p>
           {{ myCoordinates.lat }} Latitude, {{ myCoordinates.lng }} Longitude
         </p>
