@@ -1,32 +1,44 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-content>
+      <router-view />
+      <v-app-bar app color="primary" dark>
+        <v-toolbar-title> Balance: 0,00 </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn text rounded>Home</v-btn>
+        <v-btn text rounded>Login</v-btn>
+        <v-btn text rounded>Register</v-btn>
+        <v-btn text rounded>My Profile</v-btn>
+        <v-btn text rounded>Map</v-btn>
+      </v-app-bar>
+    </v-content>
+
+    <v-footer color="primary lighten-1" padless>
+      <v-row justify="center" no-gutters>
+        <v-btn
+          v-for="link in links"
+          :key="link"
+          color="white"
+          text
+          rounded
+          class="my-2"
+        >
+          {{ link }}
+        </v-btn>
+        <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+          {{ new Date().getFullYear() }} — <strong>Walk it</strong>
+        </v-col>
+      </v-row>
+    </v-footer>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "App",
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
